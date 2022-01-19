@@ -15,6 +15,13 @@ namespace UnitTest
         }
 
         [TestMethod]
+        public void TestNumberOfFields()
+        {
+            NmeaGLL check = new NmeaGLL("$GPGLL,4911.405,N,12311.152,W,075444,*1D");
+            Assert.AreEqual(check.Error, true);
+        }
+
+        [TestMethod]
         public void TestLatitude()
         {
             NmeaGLL check = new NmeaGLL("$GPGLL,a4911.405,N,12311.152,W,075444,A,D,*1D");

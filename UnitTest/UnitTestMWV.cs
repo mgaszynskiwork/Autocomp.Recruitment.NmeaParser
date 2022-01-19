@@ -15,6 +15,13 @@ namespace UnitTest
         }
 
         [TestMethod]
+        public void TestNumberOfFields()
+        {
+            NmeaMWV check = new NmeaMWV("$WIMWV,214.8,R,0.1*28");
+            Assert.AreEqual(check.Error, true);
+        }
+
+        [TestMethod]
         public void TestWindAngle()
         {
             NmeaMWV check = new NmeaMWV("$WIMWV,a214.8,R,0.1,K,A*28");

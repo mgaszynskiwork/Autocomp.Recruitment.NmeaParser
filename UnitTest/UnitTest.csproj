@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\SingletonSean wpf-tutorials master SwitchingViewsMVVM\NmeaParser.csproj" />
     <ProjectReference Include="..\Autocomp.Nmea.Common\Autocomp.Nmea.Common.csproj" />
+    <ProjectReference Include="..\NmeaParser\NmeaParser.csproj" />
   </ItemGroup>
 
 </Project>

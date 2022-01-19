@@ -31,13 +31,20 @@ namespace Autocomp.Nmea.Common
                 throw;
             }
 
-            SetLatitude(nmeaMessage.Fields[0]);
-            SetLatitudeDirection(nmeaMessage.Fields[1]);
-            SetLongitude(nmeaMessage.Fields[2]);
-            SetLongitudeDirection(nmeaMessage.Fields[3]);
-            SetUTC(nmeaMessage.Fields[4]);
-            SetStatus(nmeaMessage.Fields[5]);
-            SetModeIndicator(nmeaMessage.Fields[6]);
+            if (nmeaMessage.Fields.Length >= 7)
+            {
+                SetLatitude(nmeaMessage.Fields[0]);
+                SetLatitudeDirection(nmeaMessage.Fields[1]);
+                SetLongitude(nmeaMessage.Fields[2]);
+                SetLongitudeDirection(nmeaMessage.Fields[3]);
+                SetUTC(nmeaMessage.Fields[4]);
+                SetStatus(nmeaMessage.Fields[5]);
+                SetModeIndicator(nmeaMessage.Fields[6]);
+            }
+            else
+            {
+                SetErrorMessage("Wrong number of fields.");
+            }
         }
 
         public new static bool CheckHeader(String header)

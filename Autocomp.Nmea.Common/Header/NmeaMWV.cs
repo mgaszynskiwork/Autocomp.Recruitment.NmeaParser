@@ -29,11 +29,18 @@ namespace Autocomp.Nmea.Common
                 throw;
             }
 
-            SetWindAngle(nmeaMessage.Fields[0]);
-            SetReference(nmeaMessage.Fields[1]);
-            SetWindSpeed(nmeaMessage.Fields[2]);
-            SetWindSpeedUnits(nmeaMessage.Fields[3]);
-            SetStatus(nmeaMessage.Fields[4]);
+            if (nmeaMessage.Fields.Length >= 5)
+            {
+                SetWindAngle(nmeaMessage.Fields[0]);
+                SetReference(nmeaMessage.Fields[1]);
+                SetWindSpeed(nmeaMessage.Fields[2]);
+                SetWindSpeedUnits(nmeaMessage.Fields[3]);
+                SetStatus(nmeaMessage.Fields[4]);
+            }
+            else
+            {
+                SetErrorMessage("Wrong number of fields.");
+            }
         }
 
         public new static bool CheckHeader(String header)
