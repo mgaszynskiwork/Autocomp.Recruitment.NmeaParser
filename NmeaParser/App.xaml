@@ -1,0 +1,16 @@
+﻿<Application x:Class="NmeaParser.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:NmeaParser"
+             xmlns:views="clr-namespace:NmeaParser.Views"
+             xmlns:viewmodels="clr-namespace:NmeaParser.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:ResultViewModel}">
+            <views:ResultView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MessageViewModel}">
+            <views:MessageView />
+        </DataTemplate>
+    </Application.Resources>
+</Application>

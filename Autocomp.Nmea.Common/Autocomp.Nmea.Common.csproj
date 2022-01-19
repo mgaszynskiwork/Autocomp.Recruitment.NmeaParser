@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Header\NmeaGLL.cs" />
+    <Compile Include="Header\NmeaHeader.cs" />
+    <Compile Include="Header\NmeaMWV.cs" />
     <Compile Include="NmeaCrcCalculator.cs" />
     <Compile Include="NmeaFormat.cs" />
     <Compile Include="NmeaMessage.cs" />
